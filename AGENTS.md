@@ -23,7 +23,8 @@ git submodule update --init --recursive    # the frontend alone is about 140 MB
 ./scripts/check-integration.sh             # every gate of both repositories plus the smoke tests
 ```
 
-The first two are the CI gates (`.github/workflows/ci.yml`).
+CI (`.github/workflows/ci.yml`) runs the first two plus the three live-helper
+smoke scripts (gateway/SFU, pairing, and mailbox) against the pinned submodules.
 
 `check-integration.sh` and the `smoke-*.sh` scripts need initialized
 submodules, both toolchains (Rust with `protoc`, Elixir), python3 and curl.
