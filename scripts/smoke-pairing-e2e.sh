@@ -57,7 +57,7 @@ for _attempt in $(seq 1 40); do
 done
 
 if [[ "${ready}" != 1 ]]; then
-  cat "${server.log}" >&2
+  cat "${temp_dir}/server.log" >&2
   printf 'Elixir pairing helper did not become healthy on port %s.\n' "${port}" >&2
   exit 1
 fi
